@@ -10,10 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = phonebook
 
 flags = -Wall -Wextra -Werror
-SRCS = 	contact.class.cpp PhoneBook.class.cpp
+SRCS = 	contact.class.cpp PhoneBook.class.cpp main.cpp
 
 
 MAND = $(SRCS)

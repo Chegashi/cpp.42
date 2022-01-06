@@ -19,14 +19,9 @@ class PhoneBook
 {
     public:
         Contact contacts[8];
-        int     nbr;
-
-        PhoneBook();
-        ~PhoneBook();
         void    add();
         void    search();
-        // int nbr = 0;
-
+        int  static contact_nbr;
 };
 
 #endif

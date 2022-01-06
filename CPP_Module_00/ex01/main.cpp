@@ -10,36 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.class.hpp"
 #include "PhoneBook.class.hpp"
 #include <iostream>
 
 void header(void)
 {
-    std::cout << "Bienvenue dans votre annuaire" << std::endl;
-    std::cout << "pour ajouter un contact taper `ADD`" << std::endl;
-    std::cout << "pour chercher un contact taper `SEARCH`" << std::endl;
-    std::cout << "pour quiter votre annuaire taper `EXIT`" << std::endl;
+    std::cout << "to add a contact tape `ADD`" << std::endl;
+    std::cout << "to add a contact tape `SEARCH`" << std::endl;
+    std::cout << "to add a contact tape `EXIT`" << std::endl;
 }
 
 int main(void)
 {
     PhoneBook annuaire;
     std::string input;
-
-    annuaire = PhoneBook();
+    
+    std::cout << BLUE << "WELCOME to your phone book" << RESET<< std::endl;
     while (1337)
     {
         header();
         std::cin >> input;
         if (!input.compare("ADD"))
             annuaire.add();
-        else if (!input.compare("search"))
+        else if (!input.compare("SEARCH"))
             annuaire.search();
-        else if (!input.compare("exit"))
-            break;
+        else if (!input.compare("EXIT"))
+            return (0);
         else
-            std::cout << "invalid input" << std::endl;
+            std::cout << RED << "invalid input" << RESET <<std::endl;
     }
     return (0);
 }

@@ -23,7 +23,7 @@ int main(int ac, char **av)
     else
     {
         for (j = 1; j < ac; j++)
-            for (i = 0; i < strlen(av[j]); i++)
+            for (i = 0; av[j][i]; i++)
                 if (islower(av[j][i]))
                     std::cout << (char)toupper(av[j][i]);
                 else
