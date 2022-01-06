@@ -6,7 +6,7 @@
 #    By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/20 16:48:44 by mochegri          #+#    #+#              #
-#    Updated: 2021/12/20 20:01:17 by mochegri         ###   ########.fr        #
+#    Updated: 2022/01/04 16:16:16 by mochegri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ $(NAME): $(SRCS)
 all : $(NAME)
 
 clean:
-	@rm -f $(SRC:.c=.o) $(MAND:.c=.o)
+	@rm -f *.o
 
 fclean:	clean
 	rm -f $(NAME)
