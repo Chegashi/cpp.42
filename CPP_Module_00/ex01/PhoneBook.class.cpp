@@ -33,11 +33,11 @@ void	PhoneBook::add(void)
         this->contacts[contact_nbr].set_phone_number(str);
         std::cout << "darkest_secret:"; std::cin >> str;
         this->contacts[contact_nbr].set_darkest_secret(str);
-        std::cout << GREEN << "👍 the contact was added 👍" << RESET << std::endl;
+        std::cout << GREEN << "👍 the contact was added." << RESET << std::endl;
         PhoneBook::contact_nbr++;
     }
     else
-        std::cout << "😔 you cant add more than 8 contact 😔" << std::endl;
+        std::cout << "😔 you cant add more than 8 contact." << std::endl;
 }
 
 std::string reduce(std::string str)
@@ -67,7 +67,8 @@ void formated(int i , Contact c, bool end)
 
 void    PhoneBook::search(void)
 {
-    int i;
+    char	indice;
+    int		i;
 
     std::cout << "┌──────────┬──────────┬──────────┬──────────┐" << std::endl;
     std::cout << "│index     │" << "first_name│" << "last_name │" << "nick_name │" << std::endl;
@@ -76,15 +77,16 @@ void    PhoneBook::search(void)
         formated(i, this->contacts[i], i == PhoneBook::contact_nbr - 1);
     std::cout << "└──────────┴──────────┴──────────┴──────────┘" << std::endl;
     std::cout << "the contact to search for:";
-    std::cin >> i;
-    if (i >= PhoneBook::contact_nbr || i < 0)
+    std::cin >> indice;
+    if (indice - '0' >= PhoneBook::contact_nbr || indice < '0')
     {
-        std::cout << "🙄 invalid index 🙄\n";
+        std::cout << "invalid index 🙄\n";
         return ;
     }
+	i = indice - '0';
     std::cout << MAGENTA << "first_name:" << RESET << contacts[i].get_first_name() << std::endl;
     std::cout << MAGENTA << "last_name:" << RESET << contacts[i].get_last_name() << std::endl;
     std::cout << MAGENTA << "nickname:" << RESET << contacts[i].get_nickname() << std::endl;
-    std::cout << MAGENTA << "phone_numbe       kjndlndnndnffffr:" << RESET << contacts[i].get_phone_number() << std::endl;
-    std::cout << MAGENTA << "🤐 darkest_secret 🤐:" << RESET << contacts[i].get_darkest_secret() << std::endl;
+    std::cout << MAGENTA << "phone_numbe" << RESET << contacts[i].get_phone_number() << std::endl;
+    std::cout << MAGENTA << "darkest_secret 🤐:" << RESET << contacts[i].get_darkest_secret() << std::endl;
 }
