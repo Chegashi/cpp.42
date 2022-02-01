@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 13:55:50 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/04 18:36:07 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/01/29 19:22:51 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int main(void)
     {
         header();
         std::cin >> input;
-        if (!input.compare("ADD"))
+        if (input == "ADD")
             annuaire.add();
-        else if (!input.compare("SEARCH"))
+        else if (input == "SEARCH")
             annuaire.search();
-        else if (!input.compare("EXIT"))
+        else if (input == "EXIT")
             return (0);
         else
             std::cout << RED << "invalid input" << RESET <<std::endl;

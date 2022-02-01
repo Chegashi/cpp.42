@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 15:41:22 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/12 23:50:27 by mochegri         ###   ########.fr       */
+/*   Created: 2022/01/10 19:34:58 by mochegri          #+#    #+#             */
+/*   Updated: 2022/01/11 14:25:44 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_Classe_H
-# define PhoneBook_Classe_H
+#ifndef ZOMBIE_H
 
-# include "contact.class.hpp"
+#define ZOMBIE_H
 
-class PhoneBook
+#include <string>
+
+class Zombie
 {
+    private:
+			std::string name;
+
     public:
-        Contact contacts[8];
-        void    add();
-        void    search();
-        int  static contact_nbr;
+		Zombie();
+		~Zombie();
+		void set_name(std::string name);
+		void	annonce(void);
+
 };
+
+Zombie* zombieHorde( int N, std::string name );
 
 #endif

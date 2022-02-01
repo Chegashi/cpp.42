@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 15:41:22 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/12 23:50:27 by mochegri         ###   ########.fr       */
+/*   Created: 2022/01/10 19:30:27 by mochegri          #+#    #+#             */
+/*   Updated: 2022/01/15 01:12:30 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_Classe_H
-# define PhoneBook_Classe_H
+#include "Zombie.hpp"
 
-# include "contact.class.hpp"
-
-class PhoneBook
+int main()
 {
-    public:
-        Contact contacts[8];
-        void    add();
-        void    search();
-        int  static contact_nbr;
-};
-
-#endif
+    Zombie *s = zombieHorde(5,"1337" );
+    delete[] s;
+    return (0);
+}

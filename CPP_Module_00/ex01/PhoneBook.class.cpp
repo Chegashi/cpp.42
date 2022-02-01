@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 13:58:09 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/04 19:19:07 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/01/29 19:29:52 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,24 +55,26 @@ std::string reduce(std::string str)
         return (str);
 }
 
-void formated(int i , Contact c)
+void formated(int i , Contact c, bool end)
 {
-    std::cout << "|" << std::setw(10) << i << "|";
-    std::cout << std::setw(10) << reduce(c.get_first_name()) << "|";
-    std::cout << std::setw(10) << reduce(c.get_last_name()) << "|";
-    std::cout << std::setw(10) << reduce(c.get_nickname()) << "|" << std::endl;
+    std::cout << "│" << std::setw(10) << i << "│";
+    std::cout << std::setw(10) << reduce(c.get_first_name()) << "│";
+    std::cout << std::setw(10) << reduce(c.get_last_name()) << "│";
+    std::cout << std::setw(10) << reduce(c.get_nickname()) << "│" << std::endl;
+    if (!end)
+        std::cout << "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
 }
 
 void    PhoneBook::search(void)
 {
     int i;
 
-    std::cout << "_____________________________________________" << std::endl;
-    std::cout << "|index     |" << "first_name|" << "last_name |" << "nick_name |" << std::endl;
-    std::cout << "_____________________________________________" << std::endl;
+    std::cout << "┌──────────┬──────────┬──────────┬──────────┐" << std::endl;
+    std::cout << "│index     │" << "first_name│" << "last_name │" << "nick_name │" << std::endl;
+    std::cout << "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
     for (int i = 0; i < PhoneBook::contact_nbr; i++)
-        formated(i, this->contacts[i]);
-    std::cout << "_____________________________________________" << std::endl;
+        formated(i, this->contacts[i], i == PhoneBook::contact_nbr - 1);
+    std::cout << "└──────────┴──────────┴──────────┴──────────┘" << std::endl;
     std::cout << "the contact to search for:";
     std::cin >> i;
     if (i >= PhoneBook::contact_nbr || i < 0)
@@ -83,6 +85,6 @@ void    PhoneBook::search(void)
     std::cout << MAGENTA << "first_name:" << RESET << contacts[i].get_first_name() << std::endl;
     std::cout << MAGENTA << "last_name:" << RESET << contacts[i].get_last_name() << std::endl;
     std::cout << MAGENTA << "nickname:" << RESET << contacts[i].get_nickname() << std::endl;
-    std::cout << MAGENTA << "phone_number:" << RESET << contacts[i].get_phone_number() << std::endl;
+    std::cout << MAGENTA << "phone_numbe       kjndlndnndnffffr:" << RESET << contacts[i].get_phone_number() << std::endl;
     std::cout << MAGENTA << "🤐 darkest_secret 🤐:" << RESET << contacts[i].get_darkest_secret() << std::endl;
 }

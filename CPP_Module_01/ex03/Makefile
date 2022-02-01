@@ -6,14 +6,14 @@
 #    By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/20 16:48:44 by mochegri          #+#    #+#              #
-#    Updated: 2022/01/13 23:09:09 by mochegri         ###   ########.fr        #
+#    Updated: 2022/01/13 23:11:43 by mochegri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = violence
 
 flags = -Wall -Wextra -Werror -std=c++98
-SRCS = 	megaphone.cpp
+SRCS = 	HumanA.cpp  HumanB.cpp  main.cpp  Weapon.cpp
 
 
 MAND = $(SRCS)
@@ -30,12 +30,3 @@ fclean:	clean
 	@rm -f $(NAME)
 
 re:		fclean all
-
-test_1:	all
-	./megaphone "shhhhh... I think the students are asleep..."
-
-test_2 : all
-	./megaphone Damnit " ! " "Sorry students, I thought this thing was off."
-
-test_3 : all
-	./megaphone

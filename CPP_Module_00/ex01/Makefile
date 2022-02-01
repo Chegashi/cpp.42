@@ -6,15 +6,14 @@
 #    By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/20 16:48:44 by mochegri          #+#    #+#              #
-#    Updated: 2022/01/05 17:41:39 by mochegri         ###   ########.fr        #
+#    Updated: 2022/01/29 19:26:25 by mochegri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-flags = -Wall -Wextra -Werror
+flags = -Wall -Wextra -Werror -std=c++98
 SRCS = 	contact.class.cpp PhoneBook.class.cpp main.cpp
-
 
 MAND = $(SRCS)
 

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 15:41:22 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/12 23:50:27 by mochegri         ###   ########.fr       */
+/*   Created: 2022/01/15 12:50:32 by mochegri          #+#    #+#             */
+/*   Updated: 2022/01/25 18:22:05 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_Classe_H
-# define PhoneBook_Classe_H
+#include <iostream>
+#include "Fixed.hpp"
 
-# include "contact.class.hpp"
-
-class PhoneBook
+int main( void )
 {
-    public:
-        Contact contacts[8];
-        void    add();
-        void    search();
-        int  static contact_nbr;
-};
-
-#endif
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
+}

@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 15:41:22 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/12 23:50:27 by mochegri         ###   ########.fr       */
+/*   Created: 2022/01/10 19:34:56 by mochegri          #+#    #+#             */
+/*   Updated: 2022/01/13 01:45:03 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_Classe_H
-# define PhoneBook_Classe_H
+#include "Zombie.hpp"
+#include <iostream>
 
-# include "contact.class.hpp"
-
-class PhoneBook
+void    Zombie::annonce(void)
 {
-    public:
-        Contact contacts[8];
-        void    add();
-        void    search();
-        int  static contact_nbr;
-};
+    std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
-#endif
+Zombie::Zombie(void)
+{
+    std::cout << "🧟 im crated 🧟" << std::endl;
+}
+
+Zombie::~Zombie(void)
+{
+    std::cout << this->name << "🧟 im dead 🧟" << std::endl;
+}
+
+void    Zombie::set_name(const std::string name)
+{
+    this->name = name;
+    this->annonce();
+}

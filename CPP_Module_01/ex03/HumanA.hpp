@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 15:41:22 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/12 23:50:27 by mochegri         ###   ########.fr       */
+/*   Created: 2022/01/11 16:16:58 by mochegri          #+#    #+#             */
+/*   Updated: 2022/01/11 21:05:43 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_Classe_H
-# define PhoneBook_Classe_H
+#ifndef HUMAN_A_H
 
-# include "contact.class.hpp"
+#define HUMAN_A_H
 
-class PhoneBook
+#include "Weapon.hpp"
+#include <string>
+
+class HumanA
 {
-    public:
-        Contact contacts[8];
-        void    add();
-        void    search();
-        int  static contact_nbr;
+    private:
+		std::string name;
+		Weapon *weapon;
+	public:
+		HumanA(std::string name, Weapon weapon);
+		~HumanA();
+        void    attack(void);
 };
 
-#endif
+#endif 

@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 15:41:22 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/12 23:50:27 by mochegri         ###   ########.fr       */
+/*   Created: 2022/01/13 23:13:17 by mochegri          #+#    #+#             */
+/*   Updated: 2022/01/14 00:42:34 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_Classe_H
-# define PhoneBook_Classe_H
+#ifndef KAREN_H
 
-# include "contact.class.hpp"
+#define KAREN_H
 
-class PhoneBook
+#include <string>
+#include <iostream>
+enum e_level
+{
+	DEBUG,
+	INFO,
+	WARNING,
+	ERROR
+};
+
+class Karen
 {
     public:
-        Contact contacts[8];
-        void    add();
-        void    search();
-        int  static contact_nbr;
+		void complain( std::string level );
+		Karen();
+		~Karen();
+
+	private:
+		void debug( void );
+		void info( void );
+		void warning( void );
+		void error( void );
 };
 
 #endif

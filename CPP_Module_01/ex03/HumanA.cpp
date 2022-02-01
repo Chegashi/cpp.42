@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 15:41:22 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/12 23:50:27 by mochegri         ###   ########.fr       */
+/*   Created: 2022/01/11 16:17:01 by mochegri          #+#    #+#             */
+/*   Updated: 2022/01/15 01:35:20 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_Classe_H
-# define PhoneBook_Classe_H
+#include "HumanA.hpp"
+#include <iostream>
 
-# include "contact.class.hpp"
-
-class PhoneBook
+HumanA::HumanA(std::string name, Weapon _weapon_) : name(name)
 {
-    public:
-        Contact contacts[8];
-        void    add();
-        void    search();
-        int  static contact_nbr;
-};
+    this->weapon = &(_weapon_);
+    this->weapon->setType(name);
+}
+            
+HumanA::~HumanA()
+{
+    ;
+}
 
-#endif
+void HumanA::attack(void)
+{
+    std::cout << this->name << " attacks with his " << this->weapon->getType() << std::endl;
+}

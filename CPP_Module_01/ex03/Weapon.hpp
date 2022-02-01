@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 15:41:22 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/12 23:50:27 by mochegri         ###   ########.fr       */
+/*   Created: 2022/01/11 15:40:15 by mochegri          #+#    #+#             */
+/*   Updated: 2022/01/15 01:34:12 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_Classe_H
-# define PhoneBook_Classe_H
+#ifndef WEAPON
+# define WEAPON
 
-# include "contact.class.hpp"
+#include <string>
 
-class PhoneBook
+class Weapon
 {
-    public:
-        Contact contacts[8];
-        void    add();
-        void    search();
-        int  static contact_nbr;
+	private:	
+		std::string	type;
+	
+	public:
+		std::string	getType(void) const;
+		void    setType(std::string str);
+        Weapon(std::string name);
+        ~Weapon();
 };
+
 
 #endif

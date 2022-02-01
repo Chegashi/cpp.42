@@ -1,0 +1,55 @@
+					5 ✅		1 🟧	28 ❌
+
+Module 00:	[3]🔜Namespace, class, member functions, stdio stream,initialization lists, static, const, ...
+	01:ex00✅
+	02:ex01✅
+	03:ex02🟧
+
+Module 01:	[7]🔜Memory allocation, references, pointers to members, switch
+	04:ex00✅
+	05:ex01✅
+	06:ex02✅	
+	07:ex03🟧
+	08:ex04✅
+	09:ex05❌
+	10:ex06❌
+
+Module 02:	[4]🔜Ad-hoc polymorphism, operators overload and orthodox canonical classes		LUNDI
+	11:ex00❌
+	12:ex01❌
+	13:ex02❌
+	14:ex03❌
+
+Module 03:	[4]🔜Inheritance
+	15:ex00❌
+	16:ex01❌
+	17:ex02❌
+	18:ex03❌
+
+Module 04:	[4]🔜Subtype polymorphism, abstract classes, interfaces							MARDI
+	19:ex00❌
+	20:ex01❌
+	21:ex02❌
+	22:ex03❌
+
+Module 05:	[4]🔜Repetition and Exceptions													MERCREDI
+	23:ex00❌
+	24:ex01❌
+	25:ex02❌
+	26:ex03❌
+
+Module 06:	[3]🔜C++ Casts																	JEUDI
+	27:ex00❌
+	28:ex01❌
+	29:ex02❌
+
+Module 07:	[4]🔜c++ Templates																VENDREDI
+	30:ex00❌
+	31:ex01❌
+	32:ex02❌
+
+Module 08:	[3]🔜Templated containers, iterators, algorithms								SAMEDI
+	33:ex00❌
+	34:ex01❌
+	35:ex02❌
+	

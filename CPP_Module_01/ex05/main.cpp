@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/24 15:41:22 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/12 23:50:27 by mochegri         ###   ########.fr       */
+/*   Created: 2022/01/13 23:13:18 by mochegri          #+#    #+#             */
+/*   Updated: 2022/01/14 00:20:40 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_Classe_H
-# define PhoneBook_Classe_H
+#include "Karen.hpp"
 
-# include "contact.class.hpp"
-
-class PhoneBook
+int main ()
 {
-    public:
-        Contact contacts[8];
-        void    add();
-        void    search();
-        int  static contact_nbr;
-};
+    Karen mochegri;
 
-#endif
+    mochegri.complain("DEBUG");
+    mochegri.complain("INFO");
+    mochegri.complain("WARNING");
+    mochegri.complain("ERROR");
+    return (0);    
+}
