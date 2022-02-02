@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 #ifndef KAREN_H
-
 #define KAREN_H
 
 #include <string>
 #include <iostream>
+
 
 class Karen
 {
@@ -23,12 +23,19 @@ class Karen
 		void complain( std::string level );
 		Karen();
 		~Karen();
-
-	private:
 		void debug( void );
 		void info( void );
 		void warning( void );
 		void error( void );
 };
+
+typedef void (Karen::*func_ptr) (void);
+
+typedef struct s_level
+{
+    int			id;
+    std::string	name;
+	func_ptr	fun;
+}               t_level;
 
 #endif

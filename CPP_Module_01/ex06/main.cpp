@@ -11,35 +11,35 @@
 /* ************************************************************************** */
 
 #include "Karen.hpp"
-#include <map>
 
 int main (int ac, char **av)
 {
-    Karen mochegri;
-    static std::map<std::string, e_level> m_level;
+    Karen test;
+    int     id;
 
     if (ac != 2)
     {
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
         return (0);
     }
-    switch (m_level[av[1]])
+    id = test.get_id(av[1]);
+    switch (id)
     {
-        case DEBUG:
+        case 0:
             std::cout << "[ DEBUG ]" << std::endl;
-            mochegri.complain("DEBUG");
+            test.complain("DEBUG");
             break;
-        case INFO:
+        case 1:
             std::cout << "[ INFO ]" << std::endl;
-            mochegri.complain("INFO");
+            test.complain("INFO");
             break;
-        case WARNING:
+        case 2:
             std::cout << "[ WARNING ]" << std::endl;
-            mochegri.complain("WARNING");
+            test.complain("WARNING");
             break;
-        case ERROR:
+        case 3:
             std::cout << "[ ERROR ]" << std::endl;
-            mochegri.complain("ERROR");
+            test.complain("ERROR");
             break;
         default:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;

@@ -21,10 +21,13 @@ int ft_erreur()
 }
 std::string replace(std::string str1, std::string str2, std::string str3)
 {
-	size_t po;
+	size_t find;
 
-	while ((po = str1.find(str2)) != std::string::npos)
-		str1.replace(po, str2.length(), str3);
+	while ((find = str1.find(str2)) != std::string::npos)
+	{
+		str1.erase(find, str2.length());
+		str1.insert(find, str3);
+	}
 	return (str1);
 }
 
@@ -39,7 +42,6 @@ int main(int ac, char **av)
     if (!ifs)
 		return (ft_erreur());
 	data = "";
-	int start = 0;
 	while (!ifs.eof())
 	{
 		if (data.compare(""))

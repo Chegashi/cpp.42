@@ -14,7 +14,7 @@
 
 int main()
 {
-    Zombie *s = zombieHorde(5,"1337" );
-    delete[] s;
+    Zombie *s = zombieHorde(5, "1337");
+    delete []s;
     return (0);
 }

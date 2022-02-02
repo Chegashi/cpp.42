@@ -12,7 +12,7 @@
 
 NAME = karenFilter
 
-flags = -Wall -Wextra -Werror -std=c++98
+flags = -std=c++98
 SRCS = 	Karen.cpp  main.cpp 
 
 MAND = $(SRCS)

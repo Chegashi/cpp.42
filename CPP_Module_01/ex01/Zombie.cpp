@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 19:34:56 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/11 13:58:49 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/01/13 01:45:03 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,18 @@ void    Zombie::annonce(void)
 
 Zombie::Zombie(void)
 {
-        //  std::cout << this->name << "🧟 im dead 🧟" << std::endl;
+    std::cout << " a zombie was crated 🧟" << std::endl;
+}
+
+Zombie::Zombie(std::string name) :name(name)
+{
+    std::cout << this->name << "was crated 🧟" << std::endl;
+    this->annonce();
 }
 
 Zombie::~Zombie(void)
 {
-         std::cout << this->name << "🧟 im dead 🧟" << std::endl;
+    std::cout << this->name << " was died 😵. " << std::endl;
 }
 
 void    Zombie::set_name(const std::string name)

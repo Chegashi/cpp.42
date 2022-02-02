@@ -6,16 +6,33 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 23:13:15 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/14 00:50:24 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/01/14 00:22:01 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Karen.hpp"
+t_level karen_ptr[4];
+
+void init_array(void)
+{
+	std::string names[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	
+	for (int i = 0; i < 4 ; i++)
+	{
+		karen_ptr[i].id = 0;
+		karen_ptr[i].name = names[i];
+	}
+	karen_ptr[0].fun = &Karen::debug;
+	karen_ptr[1].fun = &Karen::info;
+	karen_ptr[2].fun = &Karen::warning;
+	karen_ptr[3].fun = &Karen::error; 
+}
 
 Karen::Karen()
 {
-    ;   
+	init_array();
 }
+
 Karen::~Karen()
 {
     ;
@@ -23,15 +40,19 @@ Karen::~Karen()
 
 void    Karen::complain(std::string level)
 {
-    if (!level.compare("DEBUG"))
-        this->debug();
-    else if (!level.compare("INFO"))
-        this->info();
-    else if (!level.compare("WARNING"))
-        this->warning();
-    else if (!level.compare("ERROR"))
-        this->error();
-        
+	int i;
+	for (i = 0; i < 4 && level != karen_ptr[i].name ; i++)
+		;
+	(this->*(karen_ptr[i].fun))();
+}
+
+int    Karen::get_id(std::string level)
+{
+	int i = 0;
+
+	for (i = 0; i < 4 && level != karen_ptr[i].name ; i++)
+		;
+	return (i);
 }
 
 void    Karen::debug( void )

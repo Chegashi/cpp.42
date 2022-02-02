@@ -14,11 +14,11 @@
 
 int main ()
 {
-    Karen mochegri;
+    Karen test;
 
-    mochegri.complain("DEBUG");
-    mochegri.complain("INFO");
-    mochegri.complain("WARNING");
-    mochegri.complain("ERROR");
+    test.complain("DEBUG");
+    test.complain("INFO");
+    test.complain("WARNING");
+    test.complain("ERROR");
     return (0);    
 }

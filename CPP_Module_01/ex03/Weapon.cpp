@@ -12,9 +12,9 @@
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string name)
+Weapon::Weapon(std::string name) : type(name)
 {
-    this->type = name;
+    ;
 }
 
 Weapon::~Weapon(void)
@@ -22,7 +22,7 @@ Weapon::~Weapon(void)
     ;    
 }
 
-std::string	Weapon::getType(void) const
+std::string	const &Weapon::getType(void)
 {
     return (this->type);
 }

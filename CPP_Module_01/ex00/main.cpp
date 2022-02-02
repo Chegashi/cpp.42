@@ -14,8 +14,8 @@
 
 int main()
 {
-    Zombie *s = newZombie("chegashi");
+    Zombie *s = newZombie("Linus Torvalds");
     delete s;
-    randomChump("chegri");
+    randomChump("Richard Stallman");
     return (0);
 }

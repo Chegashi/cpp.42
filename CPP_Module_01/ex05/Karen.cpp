@@ -12,10 +12,28 @@
 
 #include "Karen.hpp"
 
+t_level array[4];
+
+void init_array(void)
+{
+	std::string names[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	
+	for (int i = 0; i < 4 ; i++)
+	{
+		array[i].id = 0;
+		array[i].name = names[i];
+	}
+	array[0].fun = &Karen::debug;
+	array[1].fun = &Karen::info;
+	array[2].fun = &Karen::warning;
+	array[3].fun = &Karen::error; 
+}
+
 Karen::Karen()
 {
-    ;   
+	init_array();
 }
+
 Karen::~Karen()
 {
     ;
@@ -23,15 +41,10 @@ Karen::~Karen()
 
 void    Karen::complain(std::string level)
 {
-    if (!level.compare("DEBUG"))
-        this->debug();
-    if (!level.compare("INFO"))
-        this->info();
-    if (!level.compare("WARNING"))
-        this->warning();
-    if (!level.compare("ERROR"))
-        this->error();
-        
+	int i;
+	for (i = 0; i < 4 && level != array[i].name ; i++)
+		;
+	(this->*(array[i].fun))();
 }
 
 void    Karen::debug( void )
