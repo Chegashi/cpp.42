@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/15 12:50:45 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/25 16:31:17 by mochegri         ###   ########.fr       */
+/*   Created: 2022/01/10 19:34:58 by mochegri          #+#    #+#             */
+/*   Updated: 2022/01/13 01:43:17 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef ZOMBIE_H
 
-class Fixed
+#define ZOMBIE_H
+
+#include <string>
+
+class Zombie
 {
-	public:
-		Fixed(void);
-		Fixed(int const n);
-		Fixed(Fixed const & src);
-		~Fixed();
+    private:
+		std::string name;
 
+    public:
+		Zombie();
+		Zombie(std::string name);
+		~Zombie();
+	
+		void	set_name(std::string name);
+		void	annonce(void);
 
-		int		getRawBits( void ) const;
-		void	setRawBits( int const raw );
-		Fixed	& operator=(Fixed const &rhs);
-
-	private:
-		int					value;
-		static const int	litteral = 8;
 };
+
+Zombie* newZombie( std::string name );
+void randomChump( std::string name ) ;
+Zombie* zombieHorde( int N, std::string name );
+
+#endif
