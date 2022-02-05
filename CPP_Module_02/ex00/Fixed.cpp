@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:50:41 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/24 18:48:13 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/05 20:36:41 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,17 @@
 Fixed::Fixed() : value(0)
 {
     std::cout << "Default constructor called" << std::endl;
-    return;                   
 }
 
 Fixed::Fixed(int const n) : value(n)
 {
     std::cout << "constructor called" << std::endl;
-    return;
 }
 
 Fixed::Fixed(Fixed const & src)
 {
     std::cout << "Copy constructor called" << std::endl;
-    this->setRawBits(src.getRawBits());
+    *this = src;
     return;
 }
 
