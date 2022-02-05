@@ -13,14 +13,14 @@
 #include "HumanB.hpp"
 #include <iostream>
 
-HumanB::HumanB(std::string name, Weapon &_weapon_) : name(name), weapon(&_weapon_) 
+HumanB::HumanB(std::string name, Weapon *_weapon_) : name(name), weapon(_weapon_) 
 {
     ;
 }
 
-HumanB::HumanB(std::string name) : name(name)
+HumanB::HumanB(std::string name) : name(name), weapon(NULL) 
 {
-    this->weapon = NULL;
+    ;
 }
            
 HumanB::~HumanB()

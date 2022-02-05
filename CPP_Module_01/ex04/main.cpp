@@ -35,10 +35,13 @@ int main(int ac, char **av)
 {
 	std::string data;
 	std::string line;
+	std::string filename;
+
 
     if (ac != 4 || !av[2][0])
 		return (ft_erreur());
-    std::ifstream ifs(av[1]);
+	filename = av[1];
+    std::ifstream ifs(filename);
     if (!ifs)
 		return (ft_erreur());
 	data = "";
@@ -50,7 +53,7 @@ int main(int ac, char **av)
 		data += line;
 	}
 	ifs.close();
-	std::ofstream ofs(av[1]);
+	std::ofstream ofs(filename + ".replace");
 	ofs << replace(data, av[2], av[3]);
 	ofs.close();
     return (0);

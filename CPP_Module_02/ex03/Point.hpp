@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/15 12:50:45 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/25 16:31:17 by mochegri         ###   ########.fr       */
+/*   Created: 2022/02/05 02:37:17 by mochegri          #+#    #+#             */
+/*   Updated: 2022/02/05 04:08:55 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cmath>
+#include "Fixed.hpp"
 
-typedef uint32_t t_fixed_point;
-
-class Fixed 
+class Point 
 {
 	public:
-		Fixed(void);
-		Fixed(int const n);
-		Fixed(float const f);
-		Fixed(Fixed const & src);
-		~Fixed();
-
-		int		getRawBits( void ) const;
-		void	setRawBits( int const raw );
-
-		Fixed	& operator=(Fixed const &rhs);
-
-		float	toFloat( void ) const;
-		int		toInt( void ) const;
-		t_fixed_point		fixed_p;
-
+		Point(void);
+		Point(float const x, float const y);
+		Point(Point const & src);
+		~Point();
+        Point	& operator=(Point const &rhs);
+        
+        double	dist(Point const &rhs);
 	private:
-		int					value;
-		static const int	litteral = 8;
+		Fixed const x;
+		Fixed const y;
 
 };
 
-	std::ostream	& operator<<(std::ostream & o , Fixed const &rhs);
+std::ostream	& operator<<(std::ostream & o , Point const &rhs);
+bool			bsp( Point const a, Point const b, Point const c, Point const point);

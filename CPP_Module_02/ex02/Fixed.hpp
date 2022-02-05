@@ -28,9 +28,23 @@ class Fixed
 		void	setRawBits( int const raw );
 
 		Fixed	& operator=(Fixed const &rhs);
+		bool	operator<(Fixed const &rhs) const;
+		bool	operator<=(Fixed const &rhs) const;
+		bool	operator>(Fixed const &rhs) const;
+		bool	operator>=(Fixed const &rhs) const;
+		bool	operator==(Fixed const &rhs) const;
+		bool	operator!=(Fixed const &rhs) const;
+		Fixed	operator+(Fixed const &rhs) const;
+		Fixed	operator-(Fixed const &rhs) const;
+		Fixed	operator*(Fixed const &rhs) const;
+		Fixed	operator/(Fixed const &rhs) const;
+		Fixed	operator++();
+		Fixed	operator++(int);
 
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
+		static Fixed	const &max(Fixed const &a, Fixed const &b);
+		static Fixed	const &min(Fixed const &a, Fixed const &b);
 		t_fixed_point		fixed_p;
 
 	private:

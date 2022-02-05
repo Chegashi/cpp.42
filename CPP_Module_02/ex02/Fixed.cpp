@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#define EPSILON 1.1929093e-7	
 
 Fixed::Fixed() : fixed_p(0), value(0)
 {
@@ -26,13 +27,6 @@ Fixed::Fixed(int const n) :  fixed_p(roundf(n * (1 << Fixed::litteral))) , value
 Fixed::Fixed(float const f) : fixed_p(roundf(f * (float)(1 << Fixed::litteral))) ,value(f) 
 {
     std::cout << "Float constructor called" << std::endl;
-}
-
-Fixed::Fixed(Fixed const & src)
-{
-    std::cout << "Copy constructor called" << std::endl;
-    *this = src;
-    return;
 }
 
 Fixed::~Fixed()
@@ -75,4 +69,78 @@ std::ostream	& operator<<(std::ostream & o , Fixed const &rhs)
 {
     o << rhs.toFloat();
     return (o);
+}
+
+bool	Fixed::operator<(Fixed const &rhs) const
+{
+    return (this->fixed_p < rhs.fixed_p) ;
+}
+
+bool	Fixed::operator<=(Fixed const &rhs) const
+{
+    return (this->fixed_p <= rhs.fixed_p) ;
+}
+
+bool	Fixed::operator>(Fixed const &rhs) const
+{
+    return (this->fixed_p > rhs.fixed_p) ;
+}
+
+bool	Fixed::operator>=(Fixed const &rhs) const
+{
+    return (this->fixed_p != rhs.fixed_p) ;
+}
+
+bool	Fixed::operator==(Fixed const &rhs) const
+{
+    return (this->fixed_p - rhs.fixed_p < EPSILON) ;
+}
+
+Fixed	Fixed::operator+(Fixed const &rhs) const
+{
+    return (Fixed(rhs.value + this->value)) ;
+}
+
+Fixed	Fixed::operator-(Fixed const &rhs) const
+{
+    return (Fixed(rhs.value - this->value)) ;
+}
+
+Fixed	Fixed::operator*(Fixed const &rhs) const
+{
+    return (Fixed(this->value * rhs.value)) ;
+}
+
+Fixed	Fixed::operator/(Fixed const &rhs) const
+{
+    if(rhs.value == 0)
+    {
+        std::cout << "Error" << std::endl;
+    }
+    return (Fixed(this->value / rhs.value)) ;
+}
+
+Fixed	Fixed::operator++()
+{
+	this->value++;
+	this->fixed_p = roundf(value * (1 << Fixed::litteral));
+	return (Fixed(this->value));
+}
+
+Fixed	Fixed::operator++(int)
+{
+    Fixed   tmp(this->value);
+	this->value++;
+	this->fixed_p = roundf(value * (1 << Fixed::litteral));
+	return (tmp);
+}
+
+Fixed   const &Fixed::max(Fixed const &a, Fixed  const &b)
+{
+	return (a > b ? a : b);
+}
+
+Fixed   const &Fixed::min(Fixed const &a, Fixed  const &b)
+{
+	return (a < b ? a : b);
 }
