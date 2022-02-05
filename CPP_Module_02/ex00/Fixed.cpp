@@ -6,20 +6,26 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:50:41 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/05 20:36:41 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/05 22:11:52 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed() : value(0)
 {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(int const n) : value(n)
+Fixed::Fixed(int const n) : value(roundf(n * (1 << Fixed::litteral)))
 {
     std::cout << "constructor called" << std::endl;
+}
+
+Fixed::Fixed(float const f) : value(roundf(f * (float)(1 << Fixed::litteral)))
+{
+    std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const & src)

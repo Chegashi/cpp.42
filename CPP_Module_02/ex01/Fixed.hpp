@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:50:45 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/25 16:31:17 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/05 22:26:19 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,9 @@ class Fixed
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
-
 		Fixed	& operator=(Fixed const &rhs);
-
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
-		t_fixed_point		fixed_p;
 
 	private:
 		int					value;

@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:50:32 by mochegri          #+#    #+#             */
-/*   Updated: 2022/01/25 16:36:49 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/06 00:07:42 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,4 @@ int main( void )
     std::cout << b << std::endl;
     std::cout << Fixed::max( a, b ) << std::endl;
     return 0;
-} 
+}
