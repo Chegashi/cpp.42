@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 18:34:38 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/08 17:46:57 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/09 15:56:46 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,20 @@ class ClapTrap
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap &src);
 		~ClapTrap();
-
-		static int	nbr_claps;
-		static ClapTrap claps[NBR_CLAPS_MAX];
 		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		static void	ft_save(ClapTrap &src);
 
-	private:
+	protected:
 		std::string	name;
 		int			hit_point;
 		int			energy_point;
 		int			attack_damage;
+		static int	nbr_claps;
+		static ClapTrap claps[NBR_CLAPS_MAX];
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+		static void	ft_save(ClapTrap &src);
+
+
 };
 
 

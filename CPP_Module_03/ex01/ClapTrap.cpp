@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 18:34:42 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/08 18:57:25 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:17:30 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,25 @@ ClapTrap ClapTrap::claps[];
 
 ClapTrap::ClapTrap() : name(""), hit_point(10), energy_point(10), attack_damage(0)
 {
-	// ClapTrap::ft_save(*this);
+	;
 }
 
 ClapTrap::ClapTrap(std::string name) : name(name), hit_point(10), energy_point(10), attack_damage(0)
 {
-	std::cout << "constructor called" << std::endl;
+	std::cout << "ClapTrap : constructor called" << std::endl;
 	ClapTrap::ft_save(*this);
 }
 
 ClapTrap::ClapTrap(ClapTrap &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap : Copy constructor called" << std::endl;
 	*this = src;
 	ClapTrap::ft_save(*this);
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called:" << std::endl;
+	std::cout << "ClapTrap : Destructor called:" << std::endl;
 }
 
 void	ClapTrap::ft_save(ClapTrap &src)
