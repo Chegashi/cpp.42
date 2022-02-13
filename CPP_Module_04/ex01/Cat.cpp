@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 02:30:36 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/13 21:52:07 by mochegri         ###   ########.fr       */
+/*   Created: 2022/02/13 02:25:13 by mochegri          #+#    #+#             */
+/*   Updated: 2022/02/13 22:04:42 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Dog.hpp"
+#include "Cat.hpp"
 
-Dog::Dog()
+Cat::Cat()
 {
-    Animal::type = "Dog";
-	std::cout << "Dog : default constructor called" << std::endl;
+    Animal::type = "Cat";
+	std::cout << "Cat : default constructor called" << std::endl;
+	this->brain = new Brain();
 }
 
-Dog::Dog(Dog const & src)
+Cat::Cat(Cat const & src)
 {
 	this->type = src.type;
-	std::cout << "Dog : copy constructor called" << std::endl;
+	std::cout << "Cat : copy constructor called" << std::endl;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << "Dog : Destructor called" << std::endl;
+	delete this->brain;
+	std::cout << "Animal : Destructor called" << std::endl;
 }
 
-Dog & Dog::operator=(const Dog & src)
+Cat & Cat::operator=(const Cat & src)
 {
     this->type = src.type;
 	return (*this);
 }
 
-void	Dog::makeSound() const
+void	Cat::makeSound() const
 {
-	std::cout << "Dog sound 🐶: howhow ♡(ᐢ ᴥ ᐢし)" << std::endl;
+	std::cout << "cat sound 😻: miouuuuuu (⌯・▾・⌯)" << std::endl;
 }

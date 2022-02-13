@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 01:58:53 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/13 17:00:05 by mochegri         ###   ########.fr       */
+/*   Created: 2022/02/13 01:59:55 by mochegri          #+#    #+#             */
+/*   Updated: 2022/02/13 22:05:46 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WrongCat_H
-#define WrongCat_H
+#ifndef DOG_H
+#define DOG_H
 
 #include <string>
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class WrongCat : public WrongAnimal
+class Dog : public Animal
 {
 	public:
-		WrongCat();
-		~WrongCat();
-		WrongCat(WrongCat const & src);
-		WrongCat & operator=(const WrongCat & src);
-
+		Dog();
+		Dog(Dog const & src);
+		~Dog();
+		Dog & operator=(const Dog & src);
+		Brain		*brain;
 		void		makeSound() const;
 };
 

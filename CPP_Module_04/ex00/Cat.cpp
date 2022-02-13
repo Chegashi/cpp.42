@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 02:25:13 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/13 17:03:55 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/13 21:44:12 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,13 @@ Cat::Cat()
 
 Cat::~Cat()
 {
-	std::cout << "Animal : Destructor called" << std::endl;
+	std::cout << "Cat : Destructor called" << std::endl;
+}
+
+Cat::Cat(Cat const & src)
+{
+	this->type = src.type;
+	std::cout << "Cat : copy constructor called" << std::endl;
 }
 
 Cat & Cat::operator=(const Cat & src)

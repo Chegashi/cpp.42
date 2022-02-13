@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 01:13:07 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/13 16:55:24 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/13 21:34:46 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Animal
 {
 	public:
 		Animal();
+		Animal(Animal const & src);
 		~Animal();
 		Animal & operator=(const Animal & src);
 

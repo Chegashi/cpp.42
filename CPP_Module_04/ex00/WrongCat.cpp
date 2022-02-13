@@ -19,9 +19,15 @@ WrongCat::WrongCat()
 	std::cout << "WrongCat : default constructor called" << std::endl;
 }
 
+WrongCat::WrongCat(WrongCat const & src)
+{
+	this->type = src.type;
+	std::cout << "WrongCat : copy constructor called" << std::endl;
+}
+
 WrongCat::~WrongCat()
 {
-	std::cout << "Animal : Destructor called" << std::endl;
+	std::cout << "WrongCat : Destructor called" << std::endl;
 }
 
 WrongCat & WrongCat::operator=(const WrongCat & src)

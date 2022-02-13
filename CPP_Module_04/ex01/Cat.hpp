@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 01:58:53 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/13 17:00:05 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/13 22:04:57 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WrongCat_H
-#define WrongCat_H
+#ifndef CAT_H
+#define CAT_H
 
 #include <string>
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class WrongCat : public WrongAnimal
+class Cat : public Animal
 {
 	public:
-		WrongCat();
-		~WrongCat();
-		WrongCat(WrongCat const & src);
-		WrongCat & operator=(const WrongCat & src);
-
+		Cat();
+		Cat(Cat const & src);
+		~Cat();
+		Cat & operator=(const Cat & src);
+		Brain		*brain;		
 		void		makeSound() const;
 };
 

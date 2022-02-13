@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 02:30:36 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/13 21:52:07 by mochegri         ###   ########.fr       */
+/*   Created: 2022/02/13 02:01:13 by mochegri          #+#    #+#             */
+/*   Updated: 2022/02/13 17:05:43 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Brain.hpp"
 #include <iostream>
-#include "Dog.hpp"
+#include <string>
 
-Dog::Dog()
+Brain::Brain() : type("Brain")
 {
-    Animal::type = "Dog";
-	std::cout << "Dog : default constructor called" << std::endl;
+	std::cout << "Brain : default constructor called" << std::endl;
 }
 
-Dog::Dog(Dog const & src)
+Brain::Brain(Brain const & src)
 {
 	this->type = src.type;
-	std::cout << "Dog : copy constructor called" << std::endl;
+	// for (size_t i = 0; i < Brain::ideas_nbrs; i++)
+	// {
+	// 	this->ideas[i] = src.ideas[i];
+	// }
+	std::cout << "Brain : copy constructor called" << std::endl;
 }
 
-Dog::~Dog()
+Brain::~Brain()
 {
-	std::cout << "Dog : Destructor called" << std::endl;
+	std::cout << "Brain : Destructor called" << std::endl;
 }
 
-Dog & Dog::operator=(const Dog & src)
+Brain & Brain::operator=(const Brain & src)
 {
     this->type = src.type;
 	return (*this);
-}
-
-void	Dog::makeSound() const
-{
-	std::cout << "Dog sound 🐶: howhow ♡(ᐢ ᴥ ᐢし)" << std::endl;
 }

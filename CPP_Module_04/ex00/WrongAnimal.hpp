@@ -19,6 +19,7 @@ class WrongAnimal
 {
 	public:
 		WrongAnimal();
+		WrongAnimal(WrongAnimal const & src);
 		~WrongAnimal();
 		WrongAnimal & operator=(const WrongAnimal & src);
 
