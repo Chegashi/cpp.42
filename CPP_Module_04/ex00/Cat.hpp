@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 01:58:53 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/13 03:06:53 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/13 17:00:05 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Cat : public Animal
 		Cat();
 		~Cat();
 		Cat & operator=(const Cat & src);
+
+		void		makeSound() const;
 };
 
 #endif 

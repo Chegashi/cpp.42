@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 02:30:36 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/13 17:03:34 by mochegri         ###   ########.fr       */
+/*   Created: 2022/02/13 01:13:07 by mochegri          #+#    #+#             */
+/*   Updated: 2022/02/13 16:55:24 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Dog.hpp"
+#ifndef WrongAnimal_H
+#define WrongAnimal_H
 
-Dog::Dog()
-{
-    Animal::type = "Dog";
-	std::cout << "Dog : default constructor called" << std::endl;
-}
+#include <string>
 
-Dog::~Dog()
+class WrongAnimal
 {
-	std::cout << "Animal : Destructor called" << std::endl;
-}
+	public:
+		WrongAnimal();
+		~WrongAnimal();
+		WrongAnimal & operator=(const WrongAnimal & src);
 
-Dog & Dog::operator=(const Dog & src)
-{
-    this->type = src.type;
-	return (*this);
-}
+		void		makeSound() const;
+		std::string	getType() const;
+	protected:
+    	std::string type;
+};
 
-void	Dog::makeSound() const
-{
-	std::cout << "Dog sound 🐶: howhow ♡(ᐢ ᴥ ᐢし)" << std::endl;
-}
+#endif 

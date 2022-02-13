@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 02:25:13 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/13 02:30:20 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/13 17:03:55 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,10 @@ Cat::~Cat()
 Cat & Cat::operator=(const Cat & src)
 {
     this->type = src.type;
+	return (*this);
+}
+
+void	Cat::makeSound() const
+{
+	std::cout << "cat sound 😻: miouuuuuu (⌯・▾・⌯)" << std::endl;
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,32 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include <iostream>
 #include <string>
 
-Animal::Animal() : type("Animal")
+WrongAnimal::WrongAnimal() : type("WrongAnimal")
 {
-	std::cout << "Animal : default constructor called" << std::endl;
+	std::cout << "WrongAnimal : default constructor called" << std::endl;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal : Destructor called" << std::endl;
+	std::cout << "WrongAnimal : Destructor called" << std::endl;
 }
 
-Animal & Animal::operator=(const Animal & src)
+WrongAnimal & WrongAnimal::operator=(const WrongAnimal & src)
 {
     this->type = src.type;
 	return (*this);
 }
 
-void	Animal::makeSound() const
+void	WrongAnimal::makeSound() const
 {
-	std::cout << "animal sound  🐻🙈🙉🙊🦍🐫....." << std::endl;
+	std::cout << "WrongAnimal sound  🦚🦉🦜🐸🐊🐢🦎🐍🐲🐉🦖🐳🐋🐬....." << std::endl;
 }
 
-std::string	Animal::getType() const
+std::string	WrongAnimal::getType() const
 {
 	return (this->type);
 }

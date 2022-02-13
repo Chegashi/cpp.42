@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 02:30:36 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/13 17:03:34 by mochegri         ###   ########.fr       */
+/*   Created: 2022/02/13 01:58:53 by mochegri          #+#    #+#             */
+/*   Updated: 2022/02/13 17:00:05 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Dog.hpp"
+#ifndef WrongCat_H
+#define WrongCat_H
 
-Dog::Dog()
-{
-    Animal::type = "Dog";
-	std::cout << "Dog : default constructor called" << std::endl;
-}
+#include <string>
+#include "WrongAnimal.hpp"
 
-Dog::~Dog()
+class WrongCat : public WrongAnimal
 {
-	std::cout << "Animal : Destructor called" << std::endl;
-}
+	public:
+		WrongCat();
+		~WrongCat();
+		WrongCat & operator=(const WrongCat & src);
 
-Dog & Dog::operator=(const Dog & src)
-{
-    this->type = src.type;
-	return (*this);
-}
+		void		makeSound() const;
+};
 
-void	Dog::makeSound() const
-{
-	std::cout << "Dog sound 🐶: howhow ♡(ᐢ ᴥ ᐢし)" << std::endl;
-}
+#endif 
