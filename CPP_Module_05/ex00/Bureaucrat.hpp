@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:24:39 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/15 16:19:30 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/15 17:36:35 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Bureaucrat
 		std::string	GetName();
 		void		increment();
 		void		decrement();
-		bool		test(int grade);
 		class GradeTooHighException : public std::exception
 		{
 			public:

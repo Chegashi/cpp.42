@@ -6,13 +6,13 @@
 #    By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/20 16:48:44 by mochegri          #+#    #+#              #
-#    Updated: 2022/02/15 01:28:45 by mochegri         ###   ########.fr        #
+#    Updated: 2022/02/15 17:46:22 by mochegri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Mommy
 
-flags = -Wall -Wextra -Werror -std=c++98 -g
+flags = -Wall -Wextra -Werror -std=c++98
 SRCS = 	main.cpp  Bureaucrat.cpp
 
 MAND = $(SRCS)

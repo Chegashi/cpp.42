@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:31:10 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/15 16:26:41 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/15 17:36:23 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
-	if (test(grade))
-		this->grade = grade;
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (grade > 150 )
+		throw Bureaucrat::GradeTooLowException();
+	this->grade = grade;
+	std::cout << "Bureaucrat : constructor called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
+	std::cout << "Bureaucrat : deconstructor called" << std::endl;
 
 }
 
@@ -34,44 +39,24 @@ int			Bureaucrat::GetGrade()
 	return (this->grade);
 }
 
-bool	Bureaucrat::test(int grade)
-{
-	try
-	{
-		if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		if (grade > 150 )
-			throw Bureaucrat::GradeTooLowException();
-		else
-			return (true);
-	}
-	catch (GradeTooHighException & e)
-	{
-		std::cerr << e.what() << std::endl;
-		return (false);
-	}
-	catch (GradeTooLowException & e)
-	{
-		std::cerr << e.what() << std::endl;
-		return (false);
-	}
-}
-
 void	Bureaucrat::decrement()
 {
-	if (test(this->grade + 1))
-		this->grade++;
-	else
-		std::cout << "you can't decrement the grade" << std::endl;
+	if (grade >= 150)
+	{
+		throw Bureaucrat::GradeTooLowException();
+		std::cerr << "you can't decrement the grade" << std::endl;
+	}
+	this->grade++;
 }
 
 void	Bureaucrat::increment()
 {
-	if (test(this->grade - 1))
-		this->grade--;
-	else
-		std::cout << "you can't increment the grade" << std::endl;
-	
+	if (grade <= 1)
+	{
+		throw Bureaucrat::GradeTooHighException();
+		std::cerr << "you can't increment the grade" << std::endl;
+	}
+	this->grade++;
 }
 
 std::ostream & operator<<(std::ostream &o, Bureaucrat rhs)
