@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:41:53 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/15 22:51:16 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/15 23:02:11 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 Form::Form(std::string const name, int const grade_to_sign_it, int const grade_exec) :
 name(name), is_signed(false), grade_to_sign_it(grade_to_sign_it), grade_exec(grade_exec)
 {
-	if (grade_exec < MIN_GRADE || grade_to_sign_it < MIN_GRADE)
+	if (grade_exec > MIN_GRADE || grade_to_sign_it > MIN_GRADE)
 		throw Form::GradeTooLowException();
-	else if (grade_exec > MAX_GRADE || grade_to_sign_it > MAX_GRADE)
+	else if (grade_exec < MAX_GRADE || grade_to_sign_it < MAX_GRADE)
 		throw Form::GradeTooHighException();
 	std::cout << "Form : constructor called" << std::endl;
 }
