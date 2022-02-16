@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:31:10 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/15 22:34:16 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:51:44 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
-	if (grade < MIN_GRADE)
+	if (grade > MIN_GRADE)
 		throw Bureaucrat::GradeTooHighException();
-	if (grade > MAX_GRADE )
+	if (grade < MAX_GRADE )
 		throw Bureaucrat::GradeTooLowException();
 	this->grade = grade;
 	std::cout << "Bureaucrat : constructor called" << std::endl;
@@ -71,8 +71,9 @@ void	Bureaucrat::increment()
 }
 bool	Bureaucrat::signForm(Form &form)
 {
-	if (this->GetGrade() >= form.get_signed())
+	if (this->GetGrade() > form.get_signed())
 	{
+		std::cout << this->GetName() << " cannot sign " << form.GetName() << " because " << form.get_signed() << " < " << this->GetGrade() << std::endl;
 		return (false);
 	}
 	form.signe();

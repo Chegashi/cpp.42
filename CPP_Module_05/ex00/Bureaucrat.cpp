@@ -6,18 +6,19 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:31:10 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/15 17:36:23 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:31:58 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
+#include <string>
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
-	if (grade < 1)
+	if (grade > MIN_GRADE)
 		throw Bureaucrat::GradeTooHighException();
-	if (grade > 150 )
+	if (grade < MAX_GRADE )
 		throw Bureaucrat::GradeTooLowException();
 	this->grade = grade;
 	std::cout << "Bureaucrat : constructor called" << std::endl;
@@ -27,6 +28,16 @@ Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Bureaucrat : deconstructor called" << std::endl;
 
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat &src) : name(src.GetName()) , grade(src.GetGrade())
+{
+	std::cout << "Bureaucrat : copy constructor called" << std::endl;
+}
+Bureaucrat & Bureaucrat::operator=(Bureaucrat &rhs)
+{
+	this->grade = rhs.GetGrade();
+	return(*this);
 }
 
 std::string	Bureaucrat::GetName()
@@ -41,7 +52,7 @@ int			Bureaucrat::GetGrade()
 
 void	Bureaucrat::decrement()
 {
-	if (grade >= 150)
+	if (grade >= MAX_GRADE)
 	{
 		throw Bureaucrat::GradeTooLowException();
 		std::cerr << "you can't decrement the grade" << std::endl;
@@ -51,7 +62,7 @@ void	Bureaucrat::decrement()
 
 void	Bureaucrat::increment()
 {
-	if (grade <= 1)
+	if (grade <= MIN_GRADE)
 	{
 		throw Bureaucrat::GradeTooHighException();
 		std::cerr << "you can't increment the grade" << std::endl;
