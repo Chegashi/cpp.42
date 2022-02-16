@@ -6,25 +6,32 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:39:25 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 22:09:31 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/16 22:27:56 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <iostream>
 
 int	main()
 {
 	try
 	{
-		Form f1("f1", 3, 3);
-		std::cout << f1 << std::endl;
-		Bureaucrat b1("b1", 3);
-		b1.signForm(f1);
-		f1.beSigned(b1);
-		std::cout << f1 << std::endl;
+		ShrubberyCreationForm shru("shru");
+		Bureaucrat b1("b1", 15);
+		shru.execute(b1);
 
+		RobotomyRequestForm robo("robo");
+		Bureaucrat b2("b2", 16);
+		robo.execute(b2);
+
+		PresidentialPardonForm pre("pre");
+		Bureaucrat b3("b3", 32);
+		pre.execute(b2);
 	}
 	catch (std::exception & e)
 	{

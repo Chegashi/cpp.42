@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:41:53 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 20:45:07 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/16 22:00:46 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,17 @@ Form::~Form()
 	std::cout << "Form : deconstructor called" << std::endl;
 }
 
-bool	Form::it_is_signed()
+bool	Form::it_is_signed() const
 {
 	return(this->is_signed);
 }
-int			Form::get_executer()
+
+int			Form::get_executer()  const
 {
 	return (this->grade_exec);
 }
 
-int	Form::get_signed()
+int	Form::get_signed()  const
 {
 	return (this->grade_to_sign_it);
 }
@@ -53,7 +54,7 @@ Form & Form::operator=(Form &rhs)
 	return (*this);
 }
 
-std::string Form::GetName()
+std::string Form::GetName()  const
 {
 	return (this->name);
 }
@@ -68,10 +69,4 @@ void	Form::beSigned(Bureaucrat b)
 void	Form::signe()
 {
 	this->is_signed =  true;
-}
-
-std::ostream & operator<<(std::ostream &o, Form rhs)
-{
-	o << rhs.GetName() << " form is signied[" << (rhs.it_is_signed() ? "true" : "false") << "]" ;
-	return (o);
 }
