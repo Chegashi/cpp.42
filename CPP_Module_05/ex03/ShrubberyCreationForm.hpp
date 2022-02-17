@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 17:17:23 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 23:31:22 by mochegri         ###   ########.fr       */
+/*   Created: 2022/02/16 17:18:03 by mochegri          #+#    #+#             */
+/*   Updated: 2022/02/16 22:04:51 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMY_H
-#define ROBOTOMY_H
+#ifndef SHRUBBERY_H
+#define SHRUBBERY_H
 #include "Form.hpp"
 #include <string>
+#include <ostream>
 
-class RobotomyRequestForm : public Form
+class ShrubberyCreationForm : virtual public Form
 {
 	public:
-		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(const RobotomyRequestForm &src);
-		virtual ~RobotomyRequestForm();
-		int	execute(Bureaucrat const & executor) const;
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(const ShrubberyCreationForm &src);
+		ShrubberyCreationForm		& operator=(ShrubberyCreationForm &rhs);
+		virtual ~ShrubberyCreationForm();
+		virtual int	execute(Bureaucrat const & executor) const;
 
 		std::string	get_target();
 	private:
@@ -29,5 +31,7 @@ class RobotomyRequestForm : public Form
 		static const int	grade_to_sign_it;
 		static const int	grade_exec;
 };
+
+std::ostream & operator<<(std::ostream & o, ShrubberyCreationForm rhs);
 
 #endif
