@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:45:51 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/17 01:26:50 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 14:19:31 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class Intern
 		Intern & operator=(Intern &rhs);
         Form *makeForm(std::string const form, std::string const target);
 	private:
-		ShrubberyCreationForm *make_ShrubberyCreationForm(std::string const target);
-		RobotomyRequestForm *make_RobotomyRequestForm(std::string const target);
-		PresidentialPardonForm *make_PresidentialPardonForm(std::string const target);
+		Form *make_ShrubberyCreationForm(std::string const target);
+		Form *make_RobotomyRequestForm(std::string const target);
+		Form *make_PresidentialPardonForm(std::string const target);
 };
 
 typedef Form *  (Intern::*fun_ptr) (std::string const target);

@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:40:12 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 23:35:27 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 13:58:07 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 int	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	int v1 = rand();
+	static int i = 0;
 	if (this->get_executer() < executor.GetGrade())
 		throw Form::GradeTooLowException();
-	if (v1 % 2)
+	if (i++ % 2)
 	{
 		std::cout << this->target << " has been robotomized successfully 50\\% of the time" << std::endl;
 		return (1);	
