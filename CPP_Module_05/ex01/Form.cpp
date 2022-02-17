@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:41:53 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 20:45:07 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 16:28:37 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ void	Form::signe()
 
 std::ostream & operator<<(std::ostream &o, Form rhs)
 {
-	o << rhs.GetName() << " form is signied[" << (rhs.it_is_signed() ? "true" : "false") << "]" ;
+	o << rhs.GetName() << " form is " << (rhs.it_is_signed() ? "" : "not ") << " signied";
 	return (o);
 }

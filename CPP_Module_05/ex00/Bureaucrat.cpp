@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:31:10 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 15:31:58 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 16:09:07 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int			Bureaucrat::GetGrade()
 
 void	Bureaucrat::decrement()
 {
-	if (grade >= MAX_GRADE)
+	if (this->GetGrade() >= MIN_GRADE)
 	{
 		throw Bureaucrat::GradeTooLowException();
 		std::cerr << "you can't decrement the grade" << std::endl;
@@ -62,16 +62,16 @@ void	Bureaucrat::decrement()
 
 void	Bureaucrat::increment()
 {
-	if (grade <= MIN_GRADE)
+	if (this->GetGrade() <= MAX_GRADE)
 	{
 		throw Bureaucrat::GradeTooHighException();
 		std::cerr << "you can't increment the grade" << std::endl;
 	}
-	this->grade++;
+	this->grade--;
 }
 
 std::ostream & operator<<(std::ostream &o, Bureaucrat rhs)
 {
-	o << rhs.GetName() << " bureaucrat grade " << rhs.GetGrade() ;
+	o << rhs.GetName() << ", bureaucrat grade " << rhs.GetGrade() ;
 	return (o);
 }

@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:24:39 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 22:01:13 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 17:04:22 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Bureaucrat
 		void		decrement();
 		Bureaucrat & operator=(Bureaucrat &rhs);
 		bool		signForm(Form &form);
+		int			executeForm(Form const & form);
 		class GradeTooHighException : public std::exception
 		{
 			public:

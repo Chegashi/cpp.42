@@ -6,14 +6,14 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:40:12 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/17 00:41:11 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 17:21:59 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <iostream>
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form(target , 145, 137), target(target + "_shrubbery")
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form(target, 72, 45), target(target + "_shrubbery")
 {
 	std::cout << "RobotomyRequestForm : constructor called" << std::endl;
 }
@@ -30,12 +30,12 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 int	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	int v1 = rand();
+	srand(time(NULL));
 	if (this->get_executer() < executor.GetGrade())
 		throw Form::GradeTooLowException();
-	if (v1 % 2)
+	if (rand() % 2)
 	{
-		std::cout << this->target << " has been robotomized successfully 50\\% of the time" << std::endl;
+		std::cout << this->target << " has been robotomized successfully 50\% of the time" << std::endl;
 		return (1);	
 	}
 	else

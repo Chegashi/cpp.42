@@ -6,14 +6,14 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:51:02 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 22:24:04 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 17:25:45 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form(target , 145, 137), target(target + "_shrubbery")
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form(target, 25, 5), target(target + "_shrubbery")
 {
 	std::cout << "PresidentialPardonForm : constructor called" << std::endl;
 	std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;

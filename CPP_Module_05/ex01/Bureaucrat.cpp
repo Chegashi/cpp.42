@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:31:10 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 15:51:44 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 16:22:16 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,11 @@ bool	Bureaucrat::signForm(Form &form)
 {
 	if (this->GetGrade() > form.get_signed())
 	{
-		std::cout << this->GetName() << " cannot sign " << form.GetName() << " because " << form.get_signed() << " < " << this->GetGrade() << std::endl;
+		std::cout << this->GetName() << " couldn\\’t " << form.GetName() << " because " << form.get_signed() << " < " << this->GetGrade() << std::endl;
 		return (false);
 	}
 	form.signe();
-	std::cout << this->name << "signed" << form.GetName() << std::endl;
+	std::cout << this->name << " signed " << form.GetName() << std::endl;
 	return (true);
 }
 

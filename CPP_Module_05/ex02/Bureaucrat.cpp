@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:31:10 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 22:01:21 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 17:08:07 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	Bureaucrat::increment()
 	}
 	this->grade++;
 }
+
 bool	Bureaucrat::signForm(Form &form)
 {
 	if (this->GetGrade() > form.get_signed())
@@ -78,6 +79,18 @@ bool	Bureaucrat::signForm(Form &form)
 	}
 	form.signe();
 	std::cout << this->name << "signed" << form.GetName() << std::endl;
+	return (true);
+}
+
+int	Bureaucrat::executeForm(Form const &form)
+{
+	if (this->GetGrade() > form.get_executer())
+	{
+		std::cerr << this->GetName() << " cannot exec " << form.GetName() << " because " << form.get_signed() << " < " << this->GetGrade() << std::endl;
+		return (0);
+	}
+	form.execute(*this);
+	std::cout << this->name << "executed" << form.GetName() << std::endl;
 	return (true);
 }
 

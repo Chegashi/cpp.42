@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 17:18:03 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 22:04:51 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 16:56:50 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ShrubberyCreationForm : virtual public Form
 	public:
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &src);
-		ShrubberyCreationForm		& operator=(ShrubberyCreationForm &rhs);
+		ShrubberyCreationForm	& operator=(ShrubberyCreationForm &rhs);
 		virtual ~ShrubberyCreationForm();
 		virtual int	execute(Bureaucrat const & executor) const;
 

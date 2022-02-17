@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 17:17:21 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 22:23:42 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 16:55:47 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ int	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 
 std::ostream & operator<<(std::ostream &o, ShrubberyCreationForm rhs)
 {
-	o << rhs.GetName() << " ShrubberyCreationForm Required grades: sign" << std::endl;// << this->get , exec 13 " << rhs.GetGrade() ;
+	o << rhs.GetName() << " ShrubberyCreationForm Required grades sign:" << rhs.get_signed() << " exec:" << rhs.get_executer();
 	return (o);
 }

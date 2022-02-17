@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:41:36 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/15 22:46:46 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 16:48:37 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 #include "Bureaucrat.hpp"
 #define MAX_GRADE 1
 #define MIN_GRADE 150
+
 class Bureaucrat;
+
 class Form
 {
 	public:

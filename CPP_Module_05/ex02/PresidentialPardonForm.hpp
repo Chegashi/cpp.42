@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 18:49:31 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/16 22:22:45 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/17 17:16:10 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ class PresidentialPardonForm : public Form
 		static const int	grade_to_sign_it;
 		static const int	grade_exec;
 };
-
 
 #endif
