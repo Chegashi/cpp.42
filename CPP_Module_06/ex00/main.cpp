@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:39:25 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/19 05:19:09 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/19 05:22:10 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 #include <typeinfo>
 #include <iostream>
 #include <ctype.h>
-
-// bool	is_int(char *arg)
-// {
-// 	while(*arg)
-// 		if (!isalpha(*arg++))
-// 			return (false);
-// 	return (true);
-// }
 
 void	to_char(std::string arg)
 {
