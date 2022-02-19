@@ -6,14 +6,14 @@
 #    By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/20 16:48:44 by mochegri          #+#    #+#              #
-#    Updated: 2022/02/19 22:27:07 by mochegri         ###   ########.fr        #
+#    Updated: 2022/02/19 22:27:11 by mochegri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Serialization
 
 flags = -Wall -Wextra -Werror -std=c++98
-SRCS = 	main.cpp 
+SRCS = 	main.cpp class.cpp
 
 MAND = $(SRCS)
 
