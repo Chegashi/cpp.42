@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:39:25 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/19 17:06:20 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/19 23:07:50 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ int	main()
 	uintptr_t p = serialize(&d);
 	Data *z = deserialize(p);
 	std::cout << "[" << z->x << ", " << z->y << ", " << z->z << "]" << std::endl;
+
 	return (0);
 }

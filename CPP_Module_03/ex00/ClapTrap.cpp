@@ -93,3 +93,6 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << this->name << " cant't takeDamage";
 	this->displayStatus();
 }
+
+
+

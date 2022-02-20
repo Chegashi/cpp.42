@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mouizar <mouizar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 16:39:25 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/19 05:22:10 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/20 01:07:45 by mouizar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <typeinfo>
 #include <iostream>
+#include <sstream>
+#include <string>
 #include <ctype.h>
 
 void	to_char(std::string arg)
@@ -20,14 +22,20 @@ void	to_char(std::string arg)
 	try
 	{
 		int n = std::stoi(arg);
-		if (isascii(n))
+        // std::istringstream ( arg ) >> n;
+		if (isprint(n))
 			std::cout << "char: " << static_cast<char>(n) << std::endl;
+		else if (arg.length() == 1 && isascii(arg[0]))
+			std::cout << "char: Non displayable" << std::endl;
 		else
 			std::cout << "char: impossible" << std::endl;
 	}
 	catch (...)
 	{
-		std::cout << "char: " << arg << std::endl;
+		if (arg.length() > 1)
+			std::cout << "char: impossible" << std::endl;
+		else
+			std::cout << "char: " << arg << std::endl;
 	}
 }
 
@@ -50,7 +58,7 @@ void	to_float(std::string arg)
 	{
 		float n = std::stof(arg);
 		float f = static_cast<float>(n);
-		std::cout << "float: " << f << (f - (int)f ? "" : ".0") << std::endl;
+		std::cout << "float: " << f << (f - (int)f ? "" : ".0") << "f" << std::endl;
 	}
 	catch (...)
 	{
@@ -64,7 +72,7 @@ void	to_dooble(std::string arg)
 	{
 		double n = std::stod(arg);
 		double d = static_cast<double>(n);
-		std::cout << "double: " << d << (d - (int)d ? "" : ".0") << "f" << std::endl;
+		std::cout << "double: " << d << (d - (int)d ? "" : ".0") << std::endl;
 	}
 	catch (...)
 	{

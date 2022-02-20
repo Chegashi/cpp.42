@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 17:26:39 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/19 22:34:34 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/20 01:32:45 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,6 @@ Base * generate(void)
 
 	srand(time(NULL));
 	rondom = rand() % 3;
-	std::cout << rondom << std::endl;
 	if (!rondom)
 		return (new A());
 	else if (rondom == 1)
