@@ -6,7 +6,7 @@
 /*   By: mochegri <mochegri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 22:21:44 by mochegri          #+#    #+#             */
-/*   Updated: 2022/02/22 20:27:00 by mochegri         ###   ########.fr       */
+/*   Updated: 2022/02/23 06:53:29 by mochegri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define EASYFIND_H
 
 #include <iostream>
-
 
 class InvalidArg : public std::exception
 {
